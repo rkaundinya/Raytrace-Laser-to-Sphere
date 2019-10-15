@@ -24,12 +24,13 @@ bool CheckIfLaserHitsBalloon (const std::vector<float> &sphereCenter,
 
 int main() 
 {
-    std::vector<float> C {3, 0, 5};
-    std::vector<float> L {2, 2, 6 }; 
-    std::vector<float> D {1, 2, 4 };
-    std::vector<float> O {1.0f, 2.0f, 4.0f};
+    // Sample values - should return I hit balloon
+    std::vector<float> sphereCenter {3, 0, 5};
+    std::vector<float> rayDirection {1, 2, 4 };
+    std::vector<float> rayOrigin {1, 2, 4};
+    float sphereRadius = 3;
 
-    if (CheckIfLaserHitsBalloon(C, 3.0f, O, D))
+    if (CheckIfLaserHitsBalloon(sphereCenter, sphereRadius, rayOrigin, rayDirection))
         std::cout << "I hit the balloon" << std::endl; 
     else
         std::cout << "I did not hit the balloon" << std::endl;
